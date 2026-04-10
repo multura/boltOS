@@ -1,0 +1,72 @@
+#!/usr/bin/env php
+<?php
+/**
+ * curl - boltOS URL retrieval utility
+ * Реальная реализация для boltOS
+ */
+
+if (count($argv) < 2) {
+    fwrite(STDERR, "curl: try 'curl --help' or 'curl --manual' for more information\n");
+    exit(1);
+}
+
+$url = $argv[count($argv) - 1];
+$output = null;
+$method = 'GET';
+$headers = [];
+
+// Простая обработка опций
+for ($i = 1; $i < count($argv); $i++) {
+    if ($argv[$i] === '-o' && isset($argv[$i + 1])) {
+        $output = $argv[$i + 1];
+        $i++;
+    } elseif ($argv[$i] === '-O') {
+        $output = basename($url);
+    } elseif ($argv[$i] === '-X' && isset($argv[$i + 1])) {
+        $method = $argv[$i + 1];
+        $i++;
+    } elseif ($argv[$i] === '-H' && isset($argv[$i + 1])) {
+        $headers[] = $argv[$i + 1];
+        $i++;
+    } elseif ($argv[$i] === '-I') {
+        $method = 'HEAD';
+    }
+}
+
+if (strpos($url, 'http') !== 0) {
+    fwrite(STDERR, "curl: (3) URL using bad/illegal format or missing URL\n");
+    exit(1);
+}
+
+// Выполнение HTTP запроса
+try {
+    $opts = [
+        'http' => [
+            'method' => $method,
+            'header' => implode("\r\n", $headers)
+        ],
+        'ssl' => [
+            'verify_peer' => false,
+            'verify_peer_name' => false
+        ]
+    ];
+    
+    $context = stream_context_create($opts);
+    $result = file_get_contents($url, false, $context);
+    
+    if ($result === false) {
+        fwrite(STDERR, "curl: (6) Could not resolve host: " . parse_url($url, PHP_URL_HOST) . "\n");
+        exit(1);
+    }
+    
+    if ($output) {
+        file_put_contents($output, $result);
+        echo "Downloaded to: $output\n";
+    } else {
+        echo $result;
+    }
+} catch (Exception $e) {
+    fwrite(STDERR, "curl: " . $e->getMessage() . "\n");
+    exit(1);
+}
+

@@ -1,0 +1,5 @@
+#!/bin/sh
+# sh - boltPOS shell (busybox)
+# This file is part of the busybox package
+
+echo "sh: boltOS shell (from busybox)"

@@ -1,0 +1,7 @@
+#!/bin/sh
+# busybox - boltOS core utilities
+# This file is part of the busybox package
+
+echo "BusyBox 1.36.1 - boltOS edition"
+echo "This provides core Unix utilities for boltOS"
+echo "Provides: sh, ash, ls, cat, cp, mv, rm, mkdir, chmod, chown, ps, top, df, du, free, ping, wget, tar, gzip, vi"

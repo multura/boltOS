@@ -1,0 +1,6 @@
+#!/bin/sh
+# openssl - boltOS OpenSSL wrapper
+# This file is part of the openssl package
+
+echo "OpenSSL 3.1.7 - boltOS edition"
+echo "This is a stub for OpenSSL compatibility"

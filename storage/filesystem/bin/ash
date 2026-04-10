@@ -1,0 +1,5 @@
+#!/bin/sh
+# ash - boltOS Almquist shell (busybox)
+# This file is part of the busybox package
+
+echo "ash: boltOS Almquist shell (from busybox)"

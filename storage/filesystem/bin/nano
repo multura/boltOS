@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php
+/**
+ * nano - Nano's ANOther editor, enhanced
+ * PHP implementation for boltOS
+ */
+
+function nano($args) {
+    $filename = $args[0] ?? '';
+    
+    if (!$filename) {
+        echo "Usage: nano [OPTIONS] [[+LINE,COLUMN] FILE]...\n";
+        return 1;
+    }
+    
+    if (!file_exists($filename)) {
+        // Создаем новый файл
+        file_put_contents($filename, '');
+    }
+    
+    if (is_dir($filename)) {
+        echo "nano: {$filename}: Is a directory\n";
+        return 1;
+    }
+    
+    // Проверяем, установлен ли системный nano
+    if (shell_exec('which nano')) {
+        // Используем системный nano
+        pcntl_exec('/usr/bin/nano', $args);
+        return 0;
+    }
+    
+    // Иначе используем встроенный редактор boltOS
+    echo "nano: using boltOS built-in editor\n";
+    echo "nano: not implemented as standalone - use from matter shell\n";
+    
+    return 1;
+}
+
+// Парсинг аргументов
+$args = array_slice($argv, 1);
+exit(nano($args));

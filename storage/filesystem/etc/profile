@@ -1,0 +1,6 @@
+# /etc/profile: system-wide .profile file for boltOS
+export PATH=/bin:/usr/bin
+export HOME=/home/root
+export USER=root
+export TERM=xterm-256color
+export LANG=en_US.UTF-8
