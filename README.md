@@ -50,7 +50,7 @@ apk repo remove myrepo
 
 Система автоматически загружает метаданные пакетов из всех включенных репозиториев и скачивает их при установке.
 
-Для настройки собственного репозитория см. [REPOSITORY_SETUP.md](REPOSITORY_SETUP.md).
+Для настройки собственного репозитория см. [boltos-packages-build/REPOSITORY_SETUP.md](https://github.com/multura/boltos-packages-build/REPOSITORY_SETUP.md).
 
 Или сделайте файл исполняемым:
 
@@ -117,26 +117,6 @@ apk del vie
 # Обновление пакетов
 apk upgrade
 ```
-
-### Доступные пакеты
-
-- **busybox** - набор базовых утилит (sh, ls, cat, cp, mv, rm, mkdir, и др.)
-- **vie** - текстовый редактор (VIm Easy)
-- **vim** - продвинутый текстовый редактор
-- **htop** - интерактивный монитор процессов
-- **tree** - отображение дерева директорий
-- **curl** - утилита для загрузки файлов
-- **wget** - утилита для загрузки файлов
-- **git** - система контроля версий
-- **python3** - интерпретатор Python
-- **nodejs** - JavaScript runtime
-- **ripgrep** - быстрый поиск по файлам (rg)
-- **fd** - быстрый поиск файлов
-- **bat** - cat с подсветкой синтаксиса
-- **exa** - современная замена ls
-- **starship** - кросс-шелл промпт
-- **matter** - Matter shell
-- **bash** - GNU Bourne Again SHell
 
 ### Vie редактор
 
@@ -219,7 +199,7 @@ package-name.tar.gz
 4. Добавьте описание в `packages/dist/local.json`
 5. Обновите индекс: `apk update`
 
-Подробная документация: [PACKAGES_README.txt](PACKAGES_README.txt)
+Подробная документация: [boltos-packages-build/REPOSITORY_SETUP.md](https://github.com/multura/boltos-packages-build/REPOSITORY_SETUP.md)
 
 ## Тема Gruvbox Dark
 
@@ -241,4 +221,4 @@ MIT
 
 ## Автор
 
-boltOS - PHP UNIX симулятор
+multura
