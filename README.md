@@ -50,7 +50,7 @@ apk repo remove myrepo
 
 Система автоматически загружает метаданные пакетов из всех включенных репозиториев и скачивает их при установке.
 
-Для настройки собственного репозитория см. [boltos-packages-build/REPOSITORY_SETUP.md](https://github.com/multura/boltos-packages-build/REPOSITORY_SETUP.md).
+Для настройки собственного репозитория см. [REPOSITORY_SETUP.md](REPOSITORY_SETUP.md).
 
 Или сделайте файл исполняемым:
 
@@ -193,13 +193,14 @@ package-name.tar.gz
 
 Для создания пакета:
 
-1. Создайте директорию `packages/myapp/` с исполняемым файлом
-2. Добавьте пакет в `build.php`
-3. Соберите пакет: `php build.php`
-4. Добавьте описание в `packages/dist/local.json`
-5. Обновите индекс: `apk update`
+1. Скопируйте репозиторий [boltos-packages-build](https://github.com/multura/boltos-packages-build/)
+2. Создайте директорию `packages/myapp/` с исполняемым файлом
+3. Добавьте пакет в `build.php`
+4. Соберите пакет: `php build.php`
+5. Добавьте описание в `packages/dist/local.json`
+6. Обновите индекс: `apk update`
 
-Подробная документация: [boltos-packages-build/REPOSITORY_SETUP.md](https://github.com/multura/boltos-packages-build/REPOSITORY_SETUP.md)
+Подробная документация: [README.txt](https://github.com/multura/boltos-packages-build/blob/main/README.txt)
 
 ## Тема Gruvbox Dark
 
