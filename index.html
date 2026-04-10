@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boltOS - PHP Unix Simulator</title>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="#">boltOS</a>
+                <ul class="nav">
+                    <li class="active"><a href="#">Главная</a></li>
+                    <li><a href="#features">Функции</a></li>
+                    <li><a href="#install">Установка</a></li>
+                    <li><a href="#commands">Команды</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="hero-unit">
+            <pre style="background: #f5f5f5; padding: 10px; font-size: 16px; line-height: 1.2;">
+  _           _ _    ___  ____  
+ | |__   ___ | | |_ / _ \/ ___| 
+ | '_ \ / _ \| | __| | | \___ \ 
+ | |_) | (_) | | |_| |_| |___) |
+ |_.__/ \___/|_|\__|\___/|____/ 
+            </pre>
+            <h1>boltOS</h1>
+            <p>PHP Unix Simulator с файловой системой и пакетным менеджером</p>
+            <p><span class="label label-info">Версия 1.0.0</span></p>
+            <p><a class="btn btn-primary btn-large" href="#install">Начать &raquo;</a></p>
+        </div>
+
+        <div class="row" id="features">
+            <div class="span4">
+                <h2>💻 Unix-подобная среда</h2>
+                <p>Полноценный shell с командами, файловой системой и управлением процессами</p>
+            </div>
+            <div class="span4">
+                <h2>📦 Пакетный менеджер APK</h2>
+                <p>Установка, удаление и управление пакетами через APK-подобный менеджер</p>
+            </div>
+            <div class="span4">
+                <h2>🎮 CLI игры</h2>
+                <p>Змейка, крестики-нолики, угадай число и виселица прямо в терминале</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span4">
+                <h2>✏️ Текстовый редактор vie</h2>
+                <p>Встроенный редактор с подсветкой и горячими клавишами</p>
+            </div>
+            <div class="span4">
+                <h2>🔧 Утилиты</h2>
+                <p>htop, neofetch, figlet, cowsay и другие системные утилиты</p>
+            </div>
+            <div class="span4">
+                <h2>🎨 Gruvbox тема</h2>
+                <p>Красивая цветовая схема для терминала и интерфейса</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row" id="install">
+            <div class="span12">
+                <h2>Установка и запуск</h2>
+                <pre>git clone https://github.com/your-repo/boltOS.git
+cd boltOS
+php boltos.php</pre>
+                <p>После запуска вы попадете в Matter shell с приветствием:</p>
+                <pre>root@boltos:~ λ</pre>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row" id="commands">
+            <div class="span6">
+                <h2>Основные команды APK</h2>
+                <ul>
+                    <li><code>apk add [пакет]</code> - Установить пакет</li>
+                    <li><code>apk del [пакет]</code> - Удалить пакет</li>
+                    <li><code>apk reinstall [пакет]</code> - Переустановить пакет</li>
+                    <li><code>apk list</code> - Список пакетов</li>
+                    <li><code>apk search [запрос]</code> - Поиск пакетов</li>
+                </ul>
+            </div>
+            <div class="span6">
+                <h2>Файловые команды</h2>
+                <ul>
+                    <li><code>ls</code> - Список файлов</li>
+                    <li><code>cd [путь]</code> - Сменить директорию</li>
+                    <li><code>cat [файл]</code> - Просмотр файла</li>
+                    <li><code>vie [файл]</code> - Редактировать файл</li>
+                    <li><code>mkdir [папка]</code> - Создать папку</li>
+                    <li><code>rm [файл]</code> - Удалить файл</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span6">
+                <h2>Системные команды</h2>
+                <ul>
+                    <li><code>neofetch</code> - Информация о системе</li>
+                    <li><code>htop</code> - Мониторинг процессов</li>
+                    <li><code>ps</code> - Список процессов</li>
+                    <li><code>df</code> - Использование диска</li>
+                    <li><code>free</code> - Использование памяти</li>
+                </ul>
+            </div>
+            <div class="span6">
+                <h2>Игры</h2>
+                <ul>
+                    <li><code>snake</code> - Классическая змейка</li>
+                    <li><code>tictactoe</code> - Крестики-нолики</li>
+                    <li><code>guess</code> - Угадай число</li>
+                    <li><code>hangman</code> - Виселица</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="span12">
+                <h2>Примеры использования</h2>
+                <h3>Установка пакета:</h3>
+                <pre>apk add neofetch
+neofetch</pre>
+                
+                <h3>Работа с файлами:</h3>
+                <pre>mkdir test
+cd test
+touch hello.txt
+vie hello.txt
+cat hello.txt</pre>
+                
+                <h3>Запуск игры:</h3>
+                <pre>snake</pre>
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2026 boltOS. Создано с любовью к Unix и PHP.</p>
+            <p>Лицензия: MIT</p>
+        </footer>
+    </div>
+
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
